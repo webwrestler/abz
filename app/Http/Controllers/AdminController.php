@@ -38,10 +38,8 @@ class AdminController extends Controller
         {
             $user = User::find($id);
             $chiefs = User::getChiefs();
-
             return view('admin.update', ['user'=>$user, 'chiefs'=>$chiefs]);
         } else{
-
             $user = new User;
             $user->updateUserId($id, $request);
             return redirect()->route('index');
